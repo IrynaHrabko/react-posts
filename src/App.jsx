@@ -63,10 +63,8 @@ const App = () => {
     } else {
       return (
         <form onSubmit={submitHandler}>
-      
         <AppInput propsType={'text'} propsPlaceholder={'name'} propsName={'name'} inputHandler={inputHandler}/>
         <AppInput propsType={'text'} propsPlaceholder={'username'} propsName={'username'} inputHandler={inputHandler}/>
-        
         <AppButton label={'login'} clickHandler={toggleIsLogined}/>
       </form>
       )
