@@ -1,9 +1,12 @@
 import { useState } from "react"
+import { Outlet } from "react-router-dom";
 import PostCard from "./components/PostCard";
 import AppButton from "./components/AppButton";
 import AppInput from "./components/AppInput";
 
+
 const App = () => {
+
   let [posts, setPosts] = useState([])
   let [loginData, setLoginData] = useState({
     name: '',
@@ -70,17 +73,19 @@ const App = () => {
       )
     }
   }
-
-  return (
+  return(
     <>
-    {showLoginOrLogoutComponent()}
-    {
-      posts.map((item) => (
-        <PostCard key={item.id} item={item}/>
-      ))
-    }
+      {showLoginOrLogoutComponent()}
+      {
+        posts.map((item) => (
+          <PostCard key={item.id} item={item}/>
+        ))
+      }
+      <Outlet/>
     </>
   )
+
+
 }
 
 export default App
